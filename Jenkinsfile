@@ -8,15 +8,14 @@ pipeline {
                git branch: 'main', credentialsId: 'jenkins-discord-bot', url: 'https://github.com/we-comBoo/discord-study-v2.git'
             }
         }
-        stage("go to git repo"){
-            steps{
-                sh "cd discord-study-v2"
-            }
-        }
+ 
 
         stage("Install Dependencies"){
             steps{
-                sh "npm i"
+                sh '''
+                echo "Install Dependencies"
+                npm i
+                '''
             }
 
         }
