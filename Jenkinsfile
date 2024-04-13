@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        statge("Install Dependencies"){
+        stage("Install Dependencies"){
             steps{
                 nodejs(nodeJSInstallationName:"discord-study-v2 git nodejs"){
                     sh "npm install"
