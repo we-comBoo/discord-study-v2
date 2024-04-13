@@ -10,6 +10,9 @@ pipeline {
         }
 
             stage("Install Dependencies"){
+                  when {
+    changeset "package.json"
+  }
             steps{
                 nodejs(nodeJSInstallationName:"discord-study-v2 git nodejs"){
                 sh '''
