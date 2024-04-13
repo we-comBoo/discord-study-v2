@@ -3,18 +3,20 @@ pipeline {
     
     stages {
         
-        stage('git scm update') {
+        stage('github-clone') {
             steps {
-               git url: 'https://github.com/we-comBoo/discord-study-v2.git'
+               git branch: 'main', credentialsId: 'jenkins-discord-bot', url: 'https://github.com/we-comBoo/discord-study-v2.git'
+            }
+        }
+        stage("go to git repo"){
+            steps{
+                sh "cd discord-study-v2"
             }
         }
 
-        stage("Install Dependencies"){
+        statge("Install Dependencies"){
             steps{
-                nodejs(nodeJSInstallationName:"discord-study-v2 git nodejs"){
-                    sh "npm install"
-                }
-                
+                sh "npm i"
             }
 
         }
