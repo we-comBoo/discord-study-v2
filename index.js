@@ -9,7 +9,7 @@ switch (process.env.NODE_ENV) {
     path = `${__dirname}/.env.prod`;
     break;
   default:
-    path = `${__dirname}/.env.dev`;
+    path = `${__dirname}/.env`;
 }
 
 console.log(path, `${process.env.NODE_ENV}`);
