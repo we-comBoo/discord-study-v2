@@ -124,7 +124,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     }
     else{
       if(isChannelToTrack(oldChannel) && userState.has(user.id)){
-        console.log("퇴장 처리")
+        console.log("퇴장 처리~~~")
          userState.delete(userInfo.id);
       }
       else{
