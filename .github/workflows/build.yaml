@@ -40,7 +40,5 @@ jobs:
           build-args: |
             "DISCORD_TOKEN=${{secrets.DISCORD_TOKEN}}"
           push: true
-          cache-from: type=gha # 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
-          cache-to: type=gha,mode=max
           tags: "latest"
           ## labels: ${{ steps.meta.outputs.labels }}
