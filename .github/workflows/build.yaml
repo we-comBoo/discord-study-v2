@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ${{ secrets.GAR_REGISTRY }}
   IMAGE_NAME: image
-##
+
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
