@@ -1,14 +1,19 @@
 // const supabase = require("./supabase");
 
-const userDurations = new Map();
+const userState = new Map();
 
-function startDuration(userId) {
+function initUserState(userInfo, state) {
+  //console.log(user)
+  const { id, name, globalName } = userInfo;
   // Record the start time
-  userDurations.set(userId, {
-    startTime: new Date(),
-    endTime: null,
-    totalDuration: 0,
+  userState.set(id, {
+    enter: new Date(),
+...state
   });
+  // console.log(`${id}:${name} joined`);
+  // console.log(userState.get(id))
+
+
 }
 
 function endDuration(durationInfo) {
@@ -37,8 +42,8 @@ async function saveDuration(dsUId, dsGlobalName, dsTag, start, end, duration) {
 }
 
 module.exports = {
-  startDuration,
-  endDuration,
+  initUserState,
+  // endDuration,
   // saveDuration,
-  userDurations,
+  userState,
 };
