@@ -18,7 +18,7 @@ jobs:
           project_id: ${{secrets.GOOGLE_PROJECT}}
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
           export_default_credentials: true
-      ## gcloud auth configure-docker us-central1-docker.pkg.dev
+
       # Configure docker to use the g cloud command-line tool as a credential helper
       - name: gcloud auth configure-docker
         env:
