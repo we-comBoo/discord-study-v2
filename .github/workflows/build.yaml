@@ -19,6 +19,14 @@ jobs:
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
           export_default_credentials: true
 
+      # Configure docker to use the gcloud command-line tool as a credential helper
       - name: gcloud auth configure-docker
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      # Build docker image
+      - name: Build and Push docker image
+        env:
+          GOOLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
+        run: |-
+          docker build -f Dockerfile -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT/discord-study-docker:$GITHUB_SHA .
