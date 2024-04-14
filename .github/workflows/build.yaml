@@ -19,8 +19,8 @@ jobs:
           service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
           export_default_credentials: true
 
-      - run: gcloud auth configure-docker us-central1-docker.pkg.dev
-
       - name: build and push docker image
         env:
           GOOGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev
