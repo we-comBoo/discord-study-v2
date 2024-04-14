@@ -28,5 +28,5 @@ jobs:
       - name: Build and Push docker image
         env:
           GOOLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
-        run: |-
+        run: |
           docker build -f Dockerfile -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT/discord-study-docker:$GITHUB_SHA .
