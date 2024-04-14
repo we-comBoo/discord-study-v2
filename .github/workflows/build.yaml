@@ -25,8 +25,15 @@ jobs:
           gcloud auth configure-docker us-central1-docker.pkg.dev
 
       # Build docker image
-      - name: Build and Push docker image
+      - name: Build docker image
         env:
           GOOGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
         run: |
           docker build -f Dockerfile -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT/discord-study-docker:$GITHUB_SHA .
+
+      # Push docker image
+      - name: Push docker image
+        env:
+          GOOGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
+        run: |
+          docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT/discord-study-docker:$GITHUB_SHA
