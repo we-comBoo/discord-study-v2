@@ -40,5 +40,5 @@ jobs:
           build-args: |
             "DISCORD_TOKEN=${{secrets.DISCORD_TOKEN}}"
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          ## tags: ${{ steps.meta.outputs.tags }}
+          ## labels: ${{ steps.meta.outputs.labels }}
