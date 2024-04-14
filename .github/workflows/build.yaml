@@ -22,7 +22,7 @@ jobs:
       # Configure docker to use the g cloud command-line tool as a credential helper
       - name: gcloud auth configure-docker
         run: |
-          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://us-central1-docker.pkg.dev
+          gcloud auth configure-docker us-central1-docker.pkg.dev
 
       # Build docker image
       - name: Build docker image
