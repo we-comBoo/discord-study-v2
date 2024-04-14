@@ -142,7 +142,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 });
 
 client.login(process.env.DISCORD_TOKEN).catch((error) => {
-  console.log(err);
+  console.log(error);
   process.exit(1);
 });
 

@@ -1,5 +1,4 @@
-.env
-.env.dev
 .env.prod
+.env.dev
 /node_modules
 npm-debug-log

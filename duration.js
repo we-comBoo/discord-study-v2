@@ -10,7 +10,7 @@ function initUserState(userInfo, state) {
     enter: new Date(),
 ...state
   });
-  // console.log(`${id}:${name} joined`);
+  console.log(`${id}:${name} joined`);
   // console.log(userState.get(id))
 
 
