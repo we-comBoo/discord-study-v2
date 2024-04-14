@@ -43,5 +43,5 @@ jobs:
             "DISCORD_SERVER_ID=${{secrets.DISCORD_SERVER_ID}}"
             "VOICE_CHANNEL=${{secrets.VOICE_CHANNEL}}"
           push: true
-          tags: "v1"
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
