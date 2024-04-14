@@ -25,5 +25,5 @@ jobs:
           GOOGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/discord-study-bot-420101/discord-study-docker/discord-study-docker:latest
+          docker build -t us-central1-docker.pkg.dev/discord-study-bot-420101/discord-study-docker/discord-study-docker:latest .
           docker push us-central1-docker.pkg.dev/discord-study-bot-420101/discord-study-docker/discord-study-docker:latest
