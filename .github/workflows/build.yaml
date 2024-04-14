@@ -39,6 +39,9 @@ jobs:
           context: .
           build-args: |
             "DISCORD_TOKEN=${{secrets.DISCORD_TOKEN}}"
+            "DISCORD_CLIENT_ID=${{secrets.DISCORD_CLIENT_ID}}"
+            "DISCORD_SERVER_ID=${{secrets.DISCORD_SERVER_ID}}"
+            "VOICE_CHANNEL=${{secrets.VOICE_CHANNEL}}"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
