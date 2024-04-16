@@ -1,5 +1,7 @@
 // const supabase = require("./supabase");
 
+const { getTime } = require("../utils");
+
 const userState = new Map();
 
 function initUserState(userInfo, state) {
@@ -7,14 +9,30 @@ function initUserState(userInfo, state) {
   const { id, name, globalName } = userInfo;
   // Record the start time
   userState.set(id, {
-    enter: new Date(),
-...state
+    enter: getTime(),
+    selfDeaf: {
+      state: state.selfDeaf,
+      time: state.selfDeaf ? null : getTime(),
+    },
+    selfMute: {
+      state: state.selfMute,
+      time: state.selfMute ? null : getTime(),
+    },
+    selfVideo: {
+      state: state.selfVideo,
+      time: state.selfVideo ? getTime() : null,
+    },
+    streaming: {
+      state: state.streaming,
+      time: state.streaming ? getTime() : null,
+    },
   });
   console.log(`${id}:${name} joined`);
   // console.log(userState.get(id))
 
 
 }
+
 
 function endDuration(durationInfo) {
   durationInfo.endTime = new Date();
@@ -43,7 +61,5 @@ async function saveDuration(dsUId, dsGlobalName, dsTag, start, end, duration) {
 
 module.exports = {
   initUserState,
-  // endDuration,
-  // saveDuration,
   userState,
 };
